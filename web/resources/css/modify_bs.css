@@ -1,0 +1,46 @@
+/* modify bootstrap */
+
+:root {
+    --btn-bg-color: black;
+    --btn-border-color: black;
+    --btn-font-color: white;
+    --btn-hover-color: #64FFDA;
+
+    --page-font-color: black;
+    --page-active-color: #64FFDA;
+    --page-active-bg-color: black;
+    --page-active-bd-color: black;
+}
+
+.btn {
+    background-color: var(--btn-bg-color);
+    border-color: var(--btn-border-color);
+    color: var(--btn-font-color);
+}
+
+.btn:hover {
+    background-color: var(--btn-bg-color);
+    border-color: var(--btn-border-color);
+    color: var(--btn-hover-color);
+    transition: .15s;
+}
+
+.page-link {
+    color: var(--page-font-color);
+}
+
+.page-link:hover {
+    color: teal;
+    transition: .15s;
+}
+
+.page-item.active .page-link {
+    background: var(--page-active-bg-color);
+    border-color: var(--page-active-bd-color);
+}
+
+.page-item.active .page-link:hover {
+    color: #64FFDA;
+}
+
+/*modify end*/

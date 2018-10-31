@@ -1,0 +1,155 @@
+
+.nav {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    z-index: 100;
+}
+
+.navWrapper {
+    width: 80%;
+    max-width: 1280px;
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    border-bottom: 1px solid #fff;
+}
+
+.navContents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    font-size: 18px;
+    margin: 5px;
+}
+
+.navItem-brand {
+    font-size: 20px;
+}
+
+.navItem-brand a {
+    font-weight: 700;
+}
+
+.navItem-brand a:hover {
+    color: #fff;
+}
+
+.dropBtn {
+    display: flex;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    font-size: 15px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* for responsive start */
+
+.navItem-btn {
+    display: none;
+}
+
+.navMenu-mobile {
+    display: none;
+}
+
+#navMenu-mobile-btn2 {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.navMenu-mobile .navItem-mobile-li a {
+    display: none;
+    padding: 10px 0 10px 20px;
+    color: #6c757d;
+}
+
+.navMenu-mobile .navItem-mobile-li:last-child {
+    padding-bottom: 10px;
+}
+
+.navMenu-mobile .navItem-mobile-li a:hover {
+    color: #000;
+}
+
+@media screen and (max-width: 768px) {
+
+    .navItem-account {
+        display: none;
+    }
+
+    .navContents .navItem-btn {
+        display: block;
+    }
+
+    .navContents .navItem-btn:hover {
+        cursor: pointer;
+    }
+
+    .navMenu-mobile-Wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navMenu-mobile {
+        display: none;
+        width: 80%;
+        background: #fff;
+        color: #000;
+    }
+
+    .navMenu-mobile {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .navMenu-mobile .navItem-mobile-li a {
+        display: block;
+        padding: 10px 0 10px 20px;
+        color: #6c757d;
+    }
+
+    .navMenu-mobile .navItem-mobile-li a:hover {
+        color: #000;
+    }
+}
+
+/* for responsive end */
+

@@ -1,0 +1,205 @@
+
+.panelWrapper {
+  display: flex;
+}
+
+.leftPanel {
+  background-image: url("../img/_signin.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 40%;
+}
+
+.leftPanel-cover {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.leftPanel .infoWrapper {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  color: #fff;
+}
+
+/*.leftPanel .infoWrapper {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  color: #fff;
+}*/
+
+.leftPanel .infoContents {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.leftPanel .info-team {
+  text-align: center;
+}
+
+.infoContents .info-title {
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+
+.infoContents .info-subTitle {
+  font-size: 20px;
+}
+
+.rightPanel {
+  height: 100%;
+  width: 70%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.rightPanel label {
+    font-size: 18px;
+}
+
+/* input properties start */
+.inputWrapper {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 40%;
+  min-width: 350px;
+  margin: auto;
+}
+
+.inputContents .input-icon {
+  color: #5C9C7B;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputContents .inputSubtitle {
+  font-size: 15px;
+  color: #999999;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.inputContents .inputSubtitle a {
+  color: #999999;
+  text-decoration: underline;
+}
+
+.inputContents i {
+  font-size: 100px;
+}
+
+.chkValCmt {
+    color: #bdbdbd;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.inputContents input {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  /*margin-bottom: 50px;*/
+  border: 1px solid #999999;
+  border-radius: 3px;
+  padding: 0 0 0 15px
+}
+
+form > div {
+  margin-bottom: 50px;
+}
+
+.inputContents input:focus {
+  border: 1px solid #000;
+}
+
+.inputContents input[type=button] {
+  color: #bdbdbd;
+  font-size: 18px;
+  background: #5C9C7B;
+  border: 0;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 0;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.inputCmt {
+  padding: 5px 0 0 10px;
+  color: #f00;
+  font-size: 15px;
+}
+
+.inputContents input[type=button]:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* input properties end */
+
+/* for responsive start */
+
+@media screen and (max-width: 768px) {
+  .panelWrapper {
+    display: block;
+  }
+
+  .leftPanel {
+    width: 100%;
+    height: auto;
+  }
+
+  .leftPanel-cover {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .leftPanel .infoWrapper {
+    display: block;
+    height: auto;
+  }
+
+  .leftPanel .info-title {
+    font-size: 30px;
+    padding-top: 30px;
+    margin-bottom: 16px;
+  }
+
+  .leftPanel .info-subTitle {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .rightPanel {
+    width: 100%;
+    height: auto;
+  }
+
+  .rightPanel .inputWrapper {
+    top: 100px;
+    width: 80%;
+  }
+
+}
+
+/* for responsive end */
+
+
+
