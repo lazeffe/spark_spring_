@@ -1,4 +1,4 @@
-package model;
+package model.member;
 
 import org.springframework.stereotype.Repository;
 

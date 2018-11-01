@@ -54,7 +54,7 @@ select *from SPark;
 
 select count(*) from member;
 
-insert into MEMBER values('asdf@asdf.com', 'asdf', 'username', '18','none');
+insert into MEMBER values('asdf@asdf.com', 'asdf', 'username', '18','man');
 
 insert into BOOKMARK values('asdf@asdf.com', '영등포로터리(시)', '영등포구 영등포동3가 111-1', '032-872-7078');
 insert into BOOKMARK values('asdf@asdf.com', '동호대교(남)(시)', '강남구 압구정동 435-0', '02-445-0501');

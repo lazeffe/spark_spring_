@@ -47,11 +47,11 @@
                 주차장을 찾으시나요? <a href="/home.ho">홈으로</a>
               </div>
               <div class="inputSubtitle inputSubtitle2">
-                이미 가입하셨나요? <a href="/signIn.lo">로그인</a>
+                이미 가입하셨나요? <a href="/signIn.me">로그인</a>
               </div>
             </div>
 
-            <form action="/memberJoinAction.lo" method="post" name="signUpForm">
+            <form action="/memberJoinAction.me" method="post" name="signUpForm">
               <div class="input-email">
                 <div><label for="email">이메일</label><span class="chkValCmt">(영어 또는 숫자로 이루어진 이메일)</span></div>
                 <div class="emailWrapper">

@@ -1,4 +1,4 @@
-package model;
+package model.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -36,7 +36,6 @@ public class MemberDaoImpl implements MemberDao {
           dto.setName(rs.getString("NAME"));
 
           return dto;
-
         }
       }, email);
 
@@ -86,7 +85,7 @@ public class MemberDaoImpl implements MemberDao {
   }
 
   @Override
-  public void memberModify(final String email, final String new_pw) {
+  public void modifyPW(final String email, final String new_pw) {
 
     this.jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -96,6 +95,21 @@ public class MemberDaoImpl implements MemberDao {
         PreparedStatement pstmt = con.prepareStatement(query);
         pstmt.setString(1, new_pw);
         pstmt.setString(2, email);
+        return pstmt;
+      }
+    });
+  }
+
+  @Override
+  public void deleteAcc(final String email) {
+
+    this.jdbcTemplate.update(new PreparedStatementCreator() {
+
+      @Override
+      public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+        String query = "DELETE FROM MEMBER WHERE EMAIL = ?";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, email);
         return pstmt;
       }
     });

@@ -17,8 +17,8 @@
             <div class="dropdown" style="float:right;">
               <div class="dropBtn"><i class="material-icons icon-account">account_circle</i></div>
               <div class="dropdown-content">
-                <a href="/signIn.lo">로그인</a>
-                <a href="/signUp.lo">회원 가입</a>
+                <a href="/signIn.me">로그인</a>
+                <a href="/signUp.me">회원 가입</a>
               </div>
             </div>
           </c:when>
@@ -27,8 +27,8 @@
               <div class="dropBtn"><span>${ name }</span><i class="material-icons" id="arrow">arrow_drop_down</i></div>
               <div class="dropdown-content">
                 <a id="myBtn1">즐겨찾기</a>
-                <a href="/memberViewAction.lo?email=${ email }">계 정</a>
-                <a href="/memberLogoutAction.lo">로그 아웃</a>
+                <a href="/memberViewAction.me?email=${ email }">계 정</a>
+                <a href="/memberLogoutAction.me">로그 아웃</a>
               </div>
             </div>
           </c:when>
@@ -48,8 +48,8 @@
     <c:when test="${ name eq null}">
       <div class="navMenu-mobile-Wrapper">
         <div class="navMenu-mobile" id="navMenu-mobile1">
-          <div class="navItem-mobile-li"><a href="/Signin.Lo">로그인</a></div>
-          <div class="navItem-mobile-li"><a href="/Signup.Lo">회원 가입</a></div>
+          <div class="navItem-mobile-li"><a href="/Signin.me">로그인</a></div>
+          <div class="navItem-mobile-li"><a href="/Signup.me">회원 가입</a></div>
         </div>
       </div>
     </c:when>
@@ -57,8 +57,8 @@
       <div class="navMenu-mobile-Wrapper">
         <div class="navMenu-mobile" id="navMenu-mobile2">
           <div class="navItem-mobile-li"><a id="myBtn2">즐겨찾기</a></div>
-          <div class="navItem-mobile-li"><a href="/MemberViewAction.Lo?email=${ email }">계 정</a></div>
-          <div class="navItem-mobile-li"><a href="/MemberLogoutAction.Lo">로그 아웃</a></div>
+          <div class="navItem-mobile-li"><a href="/MemberViewAction.me?email=${ email }">계 정</a></div>
+          <div class="navItem-mobile-li"><a href="/MemberLogoutAction.me">로그 아웃</a></div>
         </div>
       </div>
     </c:when>

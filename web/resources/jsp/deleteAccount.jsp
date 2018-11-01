@@ -46,7 +46,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../resources/js/deleteAccount.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/deleteAccount.js"></script>
 
 <script>
 
@@ -57,14 +57,14 @@
     var _pw = pw.value;
 
     $.ajax({
-      url: "/DeleteAcc.aj",
+      url: "/memberDeleteAction.me",
       type: 'POST',
       data: { email : _email, pw : _pw},
       success: function (data) {
         if (data === 'success') {
           alert('계정 삭제 성공');
           window.close();
-          opener.location.href = '/Home.Lo';
+          opener.location.href = '/home.ho';
         } else if (data === 'fail') {
           alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요');
         }

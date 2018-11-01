@@ -1,12 +1,12 @@
 package controller;
 
-import model.MemberDao;
-import model.MemberDto;
+import model.member.MemberDao;
+import model.member.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import service.Member;
+import service.member.Member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,19 +29,19 @@ public class MemberController {
     this.memberDto = memberDto;
   }
 
-  @RequestMapping("/signIn.lo")
+  @RequestMapping("/signIn.me")
   protected String signIn() {
 
     return "signIn";
   }
 
-  @RequestMapping("/signUp.lo")
+  @RequestMapping("/signUp.me")
   protected String signUp() {
 
     return "signUp";
   }
 
-  @RequestMapping("/memberLoginAction.lo")
+  @RequestMapping("/memberLoginAction.me")
   protected String signInAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     String email = request.getParameter("email");
@@ -57,7 +57,7 @@ public class MemberController {
 
   }
 
-  @RequestMapping("/memberLogoutAction.lo")
+  @RequestMapping("/memberLogoutAction.me")
   protected String logOutAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     HttpSession session = request.getSession();
@@ -68,7 +68,7 @@ public class MemberController {
 
   }
 
-  @RequestMapping("/memberJoinAction.lo")
+  @RequestMapping("/memberJoinAction.me")
   protected String memberJoinAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     String email = request.getParameter("email");
@@ -83,7 +83,7 @@ public class MemberController {
 
   }
 
-  @RequestMapping("/memberViewAction.lo")
+  @RequestMapping("/memberViewAction.me")
   public ModelAndView memberViewAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
     HttpSession session = request.getSession();
     String email = (String) session.getAttribute("email");
@@ -100,36 +100,46 @@ public class MemberController {
     return mav;
   }
 
-  /*@RequestMapping("/memberModifyAction.lo")
-  protected String memberModifyAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
-    boolean result = false;
+  @RequestMapping("/memberModifyAction.me")
+  protected void memberModifyAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-    HttpSession session = request.getSession();
+    PrintWriter out = response.getWriter();
 
-    String email = (String) session.getAttribute("email");
+    String email = request.getParameter("email");
     String old_pw = request.getParameter("old_pw");
     String new_pw = request.getParameter("new_pw");
 
     memberDto = memberDao.getDetail(email);
 
-    System.out.println(memberDto.getPassword());
-
-    if (old_pw.equals(memberDto.getPassword())) {
-
-      memberDao.memberModify(email, new_pw);
-
+    if (memberDto.getPassword().equals(old_pw)) {
+      memberDao.modifyPW(email, new_pw);
+      out.print("success");
     } else {
-      response.setContentType("text/html; charset=utf-8");
-      PrintWriter out = response.getWriter();
-      out.println("<script>");
-      out.println("alert('비밀번호가 일치하지 않습니다.')");
-      out.println("location.href='/views/modifyPW.jsp'");
-      out.println("</script>");
-      out.close();
-      return null;
+      out.print("fail");
     }
+  }
 
-    return "redirect:memberViewAction.lo";
-  }*/
+  @RequestMapping("/memberDeleteAction.me")
+  protected void memberDeleteAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+    HttpSession session = request.getSession();
+    PrintWriter out = response.getWriter();
+
+    String email = request.getParameter("email");
+    String pw = request.getParameter("pw");
+
+    System.out.println(email);
+    System.out.println(pw);
+
+    memberDto = memberDao.getDetail(email);
+
+    if (memberDto.getPassword().equals(pw)) {
+      memberDao.deleteAcc(email);
+      session.invalidate();
+      out.print("success");
+    } else {
+      out.print("fail");
+    }
+  }
 
 }

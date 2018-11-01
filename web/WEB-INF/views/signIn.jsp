@@ -46,7 +46,7 @@
             <div class="inputSubtitle">
               주차장을 찾으시나요? <a href="/home.ho">홈으로</a>
             </div>
-            <form action="/memberLoginAction.lo" name="signInForm" method="post">
+            <form action="/memberLoginAction.me" name="signInForm" method="post">
               <div class="input-email">
                 <div><label for="email">이메일</label><span class="chkValCmt">(영어 또는 숫자로 이루어진 이메일)</span></div>
                 <div><input type="text" name="email" id="email" placeholder="" autofocus></div>

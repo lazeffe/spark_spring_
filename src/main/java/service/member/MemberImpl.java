@@ -1,9 +1,9 @@
-package service;
+package service.member;
 
-import model.MemberDto;
+import model.member.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import model.MemberDao;
+import model.member.MemberDao;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,10 +31,9 @@ public class MemberImpl implements Member {
     if (memberDto == null){
       response.setContentType("text/html; charset=utf-8");
       PrintWriter out = response.getWriter();
-      System.out.println("no id");
       out.println("<script>");
       out.println("alert('아이디가 존재하지 않습니다.')");
-      out.println("location.href='/signIn.lo'");
+      out.println("location.href='/signIn.me'");
       out.println("</script>");
       out.close();
       return true;
@@ -44,7 +43,7 @@ public class MemberImpl implements Member {
       PrintWriter out = response.getWriter();
       out.println("<script>");
       out.println("alert('비밀번호가 일치하지 않습니다.')");
-      out.println("location.href='/signIn.lo'");
+      out.println("location.href='/signIn.me'");
       out.println("</script>");
       out.close();
       return true;

@@ -8,19 +8,19 @@
 
 <html>
 <head>
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1"/>
-  
+
   <title>Spark - Account</title>
-  
+
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/modifyPW.css">
-  
+
   <style>
-  
+
   </style>
 
 </head>
@@ -51,29 +51,29 @@
 <script src="../js/modifyPW.js"></script>
 
 <script>
-  
-  enterModifyPW('modifyPWBtn');
 
-  /* id check with AJAX */
-  function modifyPW_AJAX(old_pw, new_pw) {
-    var _email = '${ email }';
-    var _old_pw = old_pw.value;
-    var _new_pw = new_pw.value;
+    enterModifyPW('modifyPWBtn');
 
-    $.ajax({
-      url: "/ModifyPW.aj",
-      type: 'POST',
-      data: {email_data: _email, old_pw_data: _old_pw, new_pw_data: _new_pw},
-      success: function (data) {
-        if (data === 'success') {
-          alert('비밀번호 변경 성공');
-          window.close();
-        } else if (data === 'fail') {
-          alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요');
-        }
-      }
-    })
-  }
+    /* id check with AJAX */
+    function modifyPW_AJAX(old_pw, new_pw) {
+        var _email = '${ email }';
+        var _old_pw = old_pw.value;
+        var _new_pw = new_pw.value;
+
+        $.ajax({
+            url: "/memberModifyAction.me",
+            type: 'POST',
+            data: {email: _email, old_pw: _old_pw, new_pw: _new_pw},
+            success: function (data) {
+                if (data === 'success') {
+                    alert('비밀번호 변경 성공');
+                    window.close();
+                } else if (data === 'fail') {
+                    alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요');
+                }
+            }
+        })
+    }
 
 
 </script>

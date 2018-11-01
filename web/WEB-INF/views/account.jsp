@@ -2,6 +2,8 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set value="${ userInfo }" var="user"/>
+
 <html>
 <head>
 
@@ -14,10 +16,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/account.css">
-
-  <style>
-
-  </style>
 
 </head>
 
@@ -53,19 +51,19 @@
             <div class="cardContents">
               <div class="card-item card-email">
                 <div class="email-title">이메일</div>
-                <div class="email-content">${ userInfo.email }</div>
+                <div class="email-content">${ user.email }</div>
               </div>
               <div class="card-item card-username">
                 <div class="username-title">닉네임</div>
-                <div class="username-content">${ userInfo.name }</div>
+                <div class="username-content">${ user.name }</div>
               </div>
               <div class="card-item card-age">
                 <div class="age-title">나이</div>
-                <div class="age-content">${ userInfo.age }</div>
+                <div class="age-content">${ user.age }</div>
               </div>
               <div class="card-item card-gender">
                 <div class="gender-title">성별</div>
-                <div class="gender-content">${ userInfo.gender }</div>
+                <div class="gender-content">${ user.gender }</div>
               </div>
               <div class="card-item card-modifyPW" onclick="window.open('resources/jsp/modifyPW.jsp', '_blank', 'width=600 height=500')">
                 <div class="modifyPW-title">비밀번호 변경</div>
@@ -88,12 +86,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../resources/js/signUp.js"></script>
-
-<script>
-
-
-</script>
 
 </body>
 </html>
