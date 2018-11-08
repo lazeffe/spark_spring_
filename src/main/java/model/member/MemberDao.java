@@ -1,8 +1,5 @@
 package model.member;
 
-import org.springframework.stereotype.Repository;
-
-@Repository
 public interface MemberDao {
 
   MemberDto memberCheck(String email);

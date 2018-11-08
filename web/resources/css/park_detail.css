@@ -1,0 +1,99 @@
+body a {
+  text-decoration: none;
+}
+
+body a:hover {
+  cursor: pointer;
+}
+
+.detailWrapper {
+  position: absolute;
+  width: 80%;
+  max-width: 1280px;
+  top: 10vh;
+  bottom: 10vh;
+  left: 10vw;
+  right: 10vw;
+  margin: 0 auto;
+  /*border: 1px solid red;*/
+}
+
+.detailContent {
+  display: flex;
+}
+
+.leftPanel {
+  width: 60%;
+  margin-left: 10px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.rightPanel {
+  width: 40%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* table start */
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContents {
+  background: #fff;
+  width: 100%;
+  font-size: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.type-content, .free-content, .card-available-weekday-content, .card-available-weekend-content, .card-payPerMinute-content {
+  text-align: right;
+  font-size: 14px;
+  padding-left : 10px
+}
+
+/*table end*/
+
+/* responsive start */
+@media screen and (max-width: 768px) {
+  .detailWrapper {
+    width: 100%;
+    bottom: 30vh;
+    left: 0;
+    right: 0;
+  }
+
+  .detailContent {
+    display: block;
+  }
+
+  .leftPanel {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .rightPanel {
+    width: 100%;
+    margin: 0 0 60px 0;
+  }
+
+}
+/* responsive end */
+
+

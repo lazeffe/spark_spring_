@@ -48,8 +48,8 @@
     <c:when test="${ name eq null}">
       <div class="navMenu-mobile-Wrapper">
         <div class="navMenu-mobile" id="navMenu-mobile1">
-          <div class="navItem-mobile-li"><a href="/Signin.me">로그인</a></div>
-          <div class="navItem-mobile-li"><a href="/Signup.me">회원 가입</a></div>
+          <div class="navItem-mobile-li"><a href="/signIn.me">로그인</a></div>
+          <div class="navItem-mobile-li"><a href="/signUp.me">회원 가입</a></div>
         </div>
       </div>
     </c:when>
@@ -57,8 +57,8 @@
       <div class="navMenu-mobile-Wrapper">
         <div class="navMenu-mobile" id="navMenu-mobile2">
           <div class="navItem-mobile-li"><a id="myBtn2">즐겨찾기</a></div>
-          <div class="navItem-mobile-li"><a href="/MemberViewAction.me?email=${ email }">계 정</a></div>
-          <div class="navItem-mobile-li"><a href="/MemberLogoutAction.me">로그 아웃</a></div>
+          <div class="navItem-mobile-li"><a href="/memberViewAction.me?email=${ email }">계 정</a></div>
+          <div class="navItem-mobile-li"><a href="/memberLogoutAction.me">로그 아웃</a></div>
         </div>
       </div>
     </c:when>

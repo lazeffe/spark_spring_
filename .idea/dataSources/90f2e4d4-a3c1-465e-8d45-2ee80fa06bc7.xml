@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="SCOTT">
       <ObjectId>48</ObjectId>
-      <IntrospectionTimestamp>2018-10-29.13:15:28</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-11-07.00:27:13</IntrospectionTimestamp>
       <CreatedTimestamp>2018-10-21.11:24:53</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-26.17:36:37</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-11-07.00:27:12</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -70,9 +70,9 @@
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="21" parent="2" name="BOOKMARK">
-      <ObjectId>20068</ObjectId>
-      <CreatedTimestamp>2018-10-21.11:53:38</CreatedTimestamp>
-      <ModifiedTimestamp>2018-10-21.11:53:38</ModifiedTimestamp>
+      <ObjectId>20891</ObjectId>
+      <CreatedTimestamp>2018-11-07.00:27:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-11-07.00:27:12</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="22" parent="2" name="DEPT">

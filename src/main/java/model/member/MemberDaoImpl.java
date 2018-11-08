@@ -51,7 +51,7 @@ public class MemberDaoImpl implements MemberDao {
 
       @Override
       public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-        String query = "INSERT INTO MEMBER VALUES(?,?,?,?,?)";
+        String query = "INSERT INTO MEMBER VALUES (?, ?, ?, ?, ?)";
         PreparedStatement pstmt = con.prepareStatement(query);
         pstmt.setString(1, email);
         pstmt.setString(2, pw);
@@ -65,7 +65,7 @@ public class MemberDaoImpl implements MemberDao {
 
   @Override
   public MemberDto getDetail(String email) {
-    String sql = "SELECT * FROM MEMBER WHERE EMAIL = ?";
+    String sql = "SELECT * FROM MEMBER WHERE EMAIL=?";
 
     return jdbcTemplate.queryForObject(sql, new RowMapper<MemberDto>() {
 

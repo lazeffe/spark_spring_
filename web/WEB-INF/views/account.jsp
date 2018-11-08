@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/img/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/format/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/account.css">
 
 </head>

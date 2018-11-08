@@ -27,16 +27,6 @@
   color: #fff;
 }
 
-/*.leftPanel .infoWrapper {
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  -webkit-justify-content: space-between;
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  color: #fff;
-}*/
-
 .leftPanel .infoContents {
   display: table-cell;
   vertical-align: middle;

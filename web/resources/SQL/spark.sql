@@ -48,13 +48,17 @@ create table SPark(
 	LNG		 	varchar2(50)
 );
 
-select *from member;
-
 select *from SPark;
+
+drop table Spark;
+
+insert into MEMBER values('asdf@asdf.com', 'asdf', 'username', '18','man');
+
+select *from member;
 
 select count(*) from member;
 
-insert into MEMBER values('asdf@asdf.com', 'asdf', 'username', '18','man');
+drop table MEMBER;
 
 insert into BOOKMARK values('asdf@asdf.com', '영등포로터리(시)', '영등포구 영등포동3가 111-1', '032-872-7078');
 insert into BOOKMARK values('asdf@asdf.com', '동호대교(남)(시)', '강남구 압구정동 435-0', '02-445-0501');
@@ -63,16 +67,15 @@ insert into BOOKMARK values('asdf@asdf.com', '서인사마당공영(구)', '종�
 
 select * from bookmark;
 
-commit;
-
 delete from BOOKMARK where BOOKMARK_EMAIL='asdf@asdf.com';
-
-drop table MEMBER;
 
 drop table BOOKMARK;
 
-drop table Spark;
+commit;
 
 select PARKING_NAME, ADDR, TEL FROM Spark where PARKING_CODE = '1540479';
 
-select * from SPark where PARKING_CODE = 140652
+select * from SPark;
+
+SELECT * FROM BOOKMARK WHERE BOOKMARK_EMAIL='asdf@asdf.com' and BOOKMARK_NAME = '세종로주차장(시)';
+

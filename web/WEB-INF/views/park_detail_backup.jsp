@@ -2,8 +2,8 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set value="${ boarddata }" var="data"/>
-<c:set value="${ bmkList }" var="list"/>
+<c:set value="${ parkInfo }" var="data"/>
+<c:set value="${ bookmarkList }" var="list"/>
 
 <html>
 <head>
@@ -18,17 +18,13 @@
   
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/format/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/format/header.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/format/footer.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/detail.css">
   
   <style>
-    
-    /* .text-type {
-      font-size:14px
-    } */
   
   </style>
 </head>
@@ -106,7 +102,7 @@
                     <h6 class="my-0">종류</h6>
                   </div>
                   <span
-                      class="text-muted <!-- freeOrDie -->">${data.parking_type_nm} / ${data.operation_rule_nm} / ${data.night_free_open_nm}</span>
+                      class="text-muted">${data.parking_type_nm} / ${data.operation_rule_nm} / ${data.night_free_open_nm}</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                   <div>
@@ -183,49 +179,12 @@
         </div>
       </div>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-    
-      <!-- Modal content -->
-      <div class="modal-content-custom">
-        <div class="modal-header-custom">
-          <span class="close-custom">&times;</span>
-          <div class="modal-header-title">즐겨찾기</div>
-        </div>
-        <c:forEach items="${ list }" var="list" varStatus="status">
-        <c:set value="${ list.BOOKMARK_NAME }" var="bmkName"/>
-        <c:set value="${ status.count }" var="cnt"/>
-        <c:set value="${ status.first }" var="first"/>
-        <c:set value="${ status.last }" var="last"/>
-        <div class="modal-body-Wrapper">
-          <c:choose>
-          <c:when test="${ last ne true }">
-          <div class="modal-body-custom" id="${ cnt }">
-            </c:when>
-            <c:when test="${ last eq true }">
-            <div class="modal-body modal-body-borderless" id="${ cnt }">
-              </c:when>
-              </c:choose>
-              <div class="modal-body-left" onclick="goContentPage('${ list.BOOKMARK_NAME }')">
-                <div class="modal-body-title">${ list.BOOKMARK_NAME }</div>
-                <div class="modal-body-addr">${ list.BOOKMARK_ADDR }</div>
-                <div class="modal-body-tel">${ list.BOOKMARK_TEL }</div>
-              </div>
-              <div class="modal-body-right">
-                <div class="modal-body-icon">
-                  <button onclick="deleteBmk('${ bmkName }', '${ cnt }', '${ first }', '${ last }')"><i class="material-icons">bookmark</i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </c:forEach>
-          <div class="modal-footer-custom">
-            <div>Presented by BOH</div>
-          </div>
-        </div>
-      </div>
+
+    <jsp:include page="format/modal_bmk.jsp"/>
+
   </div>
 </main>
+
 <jsp:include page="format/footer.jsp"/>
 
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

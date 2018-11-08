@@ -1,32 +1,38 @@
 package controller;
 
-import model.member.MemberDao;
-import model.member.MemberDto;
+import model.bookmark.BookmarkDao;
+import model.bookmark.BookmarkDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import service.member.Member;
+import model.member.MemberDao;
+import model.member.MemberDto;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
+@SessionAttributes({"email", "username"})
 public class MemberController {
 
   private Member member;
   private MemberDao memberDao;
-  private MemberDto memberDto;
+  private BookmarkDao bookmarkDao;
 
   @Autowired
-  public MemberController(Member member, MemberDao memberDao, MemberDto memberDto) {
+  public MemberController(Member member, MemberDao memberDao, BookmarkDao bookmarkDao) {
     this.member = member;
     this.memberDao = memberDao;
-    this.memberDto = memberDto;
+    this.bookmarkDao = bookmarkDao;
   }
 
   @RequestMapping("/signIn.me")
@@ -42,15 +48,31 @@ public class MemberController {
   }
 
   @RequestMapping("/memberLoginAction.me")
-  protected String signInAction(HttpServletRequest request, HttpServletResponse response) throws Exception {
+  protected ModelAndView signInAction(Model modelForSession ,HttpServletRequest request, HttpServletResponse response) throws Exception {
 
     String email = request.getParameter("email");
     String pw = request.getParameter("pw");
 
     boolean result = member.getMemberCheck(request, response, email, pw);
 
+    MemberDto memberDto = memberDao.getDetail(email);
+
     if (result) {
-      return "home";
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("username", memberDto.getName());
+
+      List<BookmarkDto> bmkList = null;
+
+      bmkList = bookmarkDao.getBmkList(email);
+
+      model.put("bookmarkList", bmkList);
+
+      ModelAndView mav = new ModelAndView();
+      mav.setViewName("home");
+      mav.addAllObjects(model);
+
+      return mav;
+
     } else {
       return null;
     }
@@ -88,7 +110,7 @@ public class MemberController {
     HttpSession session = request.getSession();
     String email = (String) session.getAttribute("email");
 
-    memberDto = memberDao.getDetail(email);
+    MemberDto memberDto = memberDao.getDetail(email);
 
     Map<String, Object> model = new HashMap<String, Object>();
     model.put("userInfo", memberDto);
@@ -109,7 +131,7 @@ public class MemberController {
     String old_pw = request.getParameter("old_pw");
     String new_pw = request.getParameter("new_pw");
 
-    memberDto = memberDao.getDetail(email);
+    MemberDto memberDto = memberDao.getDetail(email);
 
     if (memberDto.getPassword().equals(old_pw)) {
       memberDao.modifyPW(email, new_pw);
@@ -131,7 +153,7 @@ public class MemberController {
     System.out.println(email);
     System.out.println(pw);
 
-    memberDto = memberDao.getDetail(email);
+    MemberDto memberDto = memberDao.getDetail(email);
 
     if (memberDto.getPassword().equals(pw)) {
       memberDao.deleteAcc(email);

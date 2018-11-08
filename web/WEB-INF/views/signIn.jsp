@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/normalize.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/format/normalize.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/signIn.css">
 
   <style>
@@ -69,7 +69,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="../resources/js/signIn.js"></script>
+  <script src="${pageContext.request.contextPath}/resources/js/signIn.js"></script>
 
   <script>
     enterSignIn('signInBtn');
