@@ -150,9 +150,6 @@ public class MemberController {
     String email = request.getParameter("email");
     String pw = request.getParameter("pw");
 
-    System.out.println(email);
-    System.out.println(pw);
-
     MemberDto memberDto = memberDao.getDetail(email);
 
     if (memberDto.getPassword().equals(pw)) {

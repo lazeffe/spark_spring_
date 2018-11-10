@@ -48,6 +48,41 @@ create table SPark(
 	LNG		 	varchar2(50)
 );
 
+create table SPark(
+	PARKING_CODE	 	varchar(50),
+	PARKING_NAME	 	varchar(50),
+	ADDR		 	varchar(50),
+	PARKING_TYPE	 	varchar(50),
+	PARKING_TYPE_NM 	varchar(50),
+	OPERATION_RULE	 	varchar(50),
+	OPERATION_RULE_NM 	varchar(50),
+	TEL		 	varchar(50),
+	CAPACITY	 	varchar(50),
+	CUR_PARKING	 	varchar(50),
+	PAY_YN	 		varchar(50),
+	PAY_NM	 		varchar(50),
+	NIGHT_FREE_OPEN	 	varchar(50),
+	NIGHT_FREE_OPEN_NM 	varchar(50),
+	WEEKDAY_BEGIN_TIME 	varchar(50),
+	WEEKDAY_END_TIME 	varchar(50),
+	WEEKEND_BEGIN_TIME 	varchar(50),
+	WEEKEND_END_TIME 	varchar(50),
+	HOLIDAY_BEGIN_TIME 	varchar(50),
+	HOLIDAY_END_TIME 	varchar(50),
+	SATURDAY_PAY_YN 	varchar(50),
+	SATURDAY_PAY_NM 	varchar(50),
+	HOLIDAY_PAY_YN	 	varchar(50),
+	HOLIDAY_PAY_NM	 	varchar(50),
+	FULLTIME_MONTHLY 	varchar(50),
+	RATES		 	varchar(50),
+	TIME_RATE	 	varchar(50),
+	ADD_RATES	 	varchar(50),
+	ADD_TIME_RATE	 	varchar(50),
+	DAY_MAXIMUM	 	varchar(50),
+	LAT		 	varchar(50),
+	LNG		 	varchar(50)
+);
+
 select *from SPark;
 
 drop table Spark;

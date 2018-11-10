@@ -30,13 +30,7 @@ public class BookmarkController {
     String code = request.getParameter("PARKING_CODE");
     String name = request.getParameter("PARKING_NAME");
 
-    System.out.println(email);
-    System.out.println(name);
-
-    System.out.println("list chk start");
     int result1 = bookmark.getBmkChk(request, response, email, name);
-    System.out.println("list chk end");
-
   }
 
   @RequestMapping("/deleteBmk.bo")
@@ -47,7 +41,6 @@ public class BookmarkController {
     String bmkName = request.getParameter("bmkName");
 
     bookmarkDao.deleteBmk(email, bmkName);
-    System.out.println("delete end");
 
     out.print("success");
 

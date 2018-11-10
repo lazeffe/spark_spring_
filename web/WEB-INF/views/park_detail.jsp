@@ -67,7 +67,7 @@
               </div>
               <div class="card-item card-capacity">
                 <div class="capacity-title">주차용량</div>
-                <div class="capacity-content">${data.capacity}칸</div>
+                <div class="capacity-content">${data.capacity} 칸</div>
               </div>
               <div class="card-item card-free">
                 <div class="free-title">유/무료</div>
@@ -87,11 +87,11 @@
               </div>
               <div class="card-item card-flatSum">
                 <div class="card-flatSum-title">정액제</div>
-                <div class="card-flatSum-content">${data.day_maximum}원</div>
+                <div class="card-flatSum-content">${data.day_maximum} 원</div>
               </div>
               <div class="card-item card-payPerMonth">
                 <div class="card-payPerMonth-title">30일</div>
-                <div class="card-payPerMonth-content">${data.fulltime_monthly}원</div>
+                <div class="card-payPerMonth-content">${data.fulltime_monthly} 원</div>
               </div>
             </div>
           </div>

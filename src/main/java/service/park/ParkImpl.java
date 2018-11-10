@@ -97,7 +97,6 @@ public class ParkImpl implements Park {
   }
 
   private String timeSet(String before) {
-    System.out.println(before);
     int beforeInt = Integer.parseInt(before);
 
     String after;
@@ -109,8 +108,6 @@ public class ParkImpl implements Park {
     } else {
       after = "pm " + Integer.toString(beforeInt - 1200).substring(0, 1) + ":00";
     }
-
-    System.out.println(after);
 
     return after;
   }
