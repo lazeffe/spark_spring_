@@ -30,11 +30,12 @@ public class BookmarkController {
     String code = request.getParameter("PARKING_CODE");
     String name = request.getParameter("PARKING_NAME");
 
-    int result1 = bookmark.getBmkChk(request, response, email, name);
+    boolean result = bookmark.getBmkChk(request, response, email, name);
   }
 
   @RequestMapping("/deleteBmk.bo")
-  protected void DeleteBmk(HttpServletRequest request, HttpServletResponse response) throws Exception {
+  protected void DeleteBmk(HttpServletRequest request,
+    HttpServletResponse response) throws Exception {
     PrintWriter out = response.getWriter();
 
     String email = request.getParameter("email");
@@ -43,7 +44,6 @@ public class BookmarkController {
     bookmarkDao.deleteBmk(email, bmkName);
 
     out.print("success");
-
   }
 
 }

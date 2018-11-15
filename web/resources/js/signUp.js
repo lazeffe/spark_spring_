@@ -1,6 +1,7 @@
 /* chk sign up */
 
 function chkSignUp() {
+
   var form = document.signUpForm;
   var email = document.signUpForm.email;
   var _emailCmt = document.getElementById('emailCmt');
@@ -118,24 +119,23 @@ function chkSignUp() {
     form.submit();
 
   }
-
 }
 
-/* id check with AJAX */
-function idChk() {
-  var _email = $('#email').val();
+  /* id check with AJAX */
+  function idChk() {
+    var _email = $('#email').val();
 
-  $.ajax({
-    url: "IdChk.aj?email=" + _email,
-    success: function (data) {
-      if (data == 'success') {
-        alert('사용가능한 이메일입니다.');
-      } else if (data == 'fail') {
-        alert('중복된 이메일입니다. 다른 이메일을 입력해주세요');
+    $.ajax({
+      url: "idChk.me?email=" + _email,
+      success: function (data) {
+        if (data === 'success') {
+          alert('사용가능한 이메일입니다.');
+        } else if (data === 'fail') {
+          alert('중복된 이메일입니다. 다른 이메일을 입력해주세요');
+        }
       }
-    }
-  })
-}
+    })
+  }
 
 /* trigger btn when press enter */
 function enterSignUp(btn) {

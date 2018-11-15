@@ -20,9 +20,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/deleteAccount.css">
   
   <style>
-    .test1 {
-      display: none;
-    }
+
   </style>
   
 </head>
@@ -66,7 +64,8 @@
           window.close();
           opener.location.href = '/home.ho';
         } else if (data === 'fail') {
-          alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요');
+          alert('비밀번호가 일치하지 않습니다. ' +
+            '다시 입력해주세요');
         }
       }
     })

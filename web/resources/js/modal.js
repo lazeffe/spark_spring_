@@ -38,36 +38,35 @@ window.onclick = function (event) {
 
 /* Modal end */
 
-/* bmk delete action */
-function deleteBmk(email, bmkName, cnt) {
-  var _email = email;
-  var _bmkName = bmkName;
-  var _cnt = document.getElementById(cnt);
-  console.log(_email);
+  /* bmk delete action */
+  function deleteBmk(email, bmkName, cnt) {
+    var _email = email;
+    var _bmkName = bmkName;
+    var _cnt = document.getElementById(cnt);
+    console.log(_email);
 
-  var r = confirm("이 주차장을 즐겨찾기에서 삭제하시겠습니까?");
+    var r = confirm("이 주차장을 즐겨찾기에서 삭제하시겠습니까?");
 
-  if (r === true) {
+    if (r === true) {
 
-    $.ajax({
-      url: "/deleteBmk.bo",
-      type: 'GET',
-      data: {
-        email: _email,
-        bmkName: _bmkName
-      },
+      $.ajax({
+        url: "/deleteBmk.bo",
+        type: 'GET',
+        data: {
+          email: _email,
+          bmkName: _bmkName
+        },
 
-      success: function (data) {
-        if (data === 'success') {
-          alert('삭제 성공');
-          _cnt.style.display = 'none';
+        success: function (data) {
+          if (data === 'success') {
+            alert('삭제 성공');
+            _cnt.style.display = 'none';
 
-        } else if (data === 'fail') {
-
+          } else if (data === 'fail') {
+            alert('삭제 실패');
+          }
         }
-      }
-    })
-  } else {
-
+      })
+    }
   }
-}
+

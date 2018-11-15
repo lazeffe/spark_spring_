@@ -15,7 +15,9 @@
         <c:choose>
           <c:when test="${ name eq null }">
             <div class="dropdown" style="float:right;">
-              <div class="dropBtn"><i class="material-icons icon-account">account_circle</i></div>
+              <div class="dropBtn">
+                <i class="material-icons icon-account">account_circle</i>
+              </div>
               <div class="dropdown-content">
                 <a href="/signIn.me">로그인</a>
                 <a href="/signUp.me">회원 가입</a>
@@ -24,7 +26,10 @@
           </c:when>
           <c:when test="${ name ne null }">
             <div class="dropdown" style="float:right;">
-              <div class="dropBtn"><span>${ name }</span><i class="material-icons" id="arrow">arrow_drop_down</i></div>
+              <div class="dropBtn">
+                <span>${ name }</span>
+                <i class="material-icons" id="arrow">arrow_drop_down</i>
+              </div>
               <div class="dropdown-content">
                 <a id="myBtn1">즐겨찾기</a>
                 <a href="/memberViewAction.me?email=${ email }">계 정</a>

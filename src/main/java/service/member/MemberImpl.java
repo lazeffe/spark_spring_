@@ -57,4 +57,17 @@ public class MemberImpl implements Member {
 
   }
 
+  @Override
+  public boolean idChk(String email) {
+    memberDto = memberDao.memberCheck(email);
+
+    if (memberDto == null) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+
 }

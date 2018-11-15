@@ -48,12 +48,14 @@ public class MemberController {
   }
 
   @RequestMapping("/memberLoginAction.me")
-  protected ModelAndView signInAction(Model modelForSession ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+  protected ModelAndView signInAction(HttpServletRequest request,
+                  HttpServletResponse response) throws Exception {
 
     String email = request.getParameter("email");
     String pw = request.getParameter("pw");
 
-    boolean result = member.getMemberCheck(request, response, email, pw);
+    boolean result
+        = member.getMemberCheck(request, response, email, pw);
 
     MemberDto memberDto = memberDao.getDetail(email);
 
@@ -102,7 +104,6 @@ public class MemberController {
     memberDao.memberInsert(email, pw, name, age, gender);
 
     return "home";
-
   }
 
   @RequestMapping("/memberViewAction.me")
@@ -155,6 +156,22 @@ public class MemberController {
     if (memberDto.getPassword().equals(pw)) {
       memberDao.deleteAcc(email);
       session.invalidate();
+      out.print("success");
+    } else {
+      out.print("fail");
+    }
+  }
+
+  @RequestMapping("/idChk.me")
+  protected void idChk(HttpServletRequest request, HttpServletResponse response)
+      throws Exception {
+    PrintWriter out = response.getWriter();
+
+    String email = request.getParameter("email");
+
+    boolean result = member.idChk(email);
+
+    if (result) {
       out.print("success");
     } else {
       out.print("fail");

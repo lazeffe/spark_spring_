@@ -6,6 +6,6 @@ import java.io.IOException;
 
 public interface Bookmark {
 
-  int getBmkChk(HttpServletRequest request, HttpServletResponse response, String email, String name) throws IOException;
+  boolean getBmkChk(HttpServletRequest request, HttpServletResponse response, String email, String name) throws IOException;
 
 }

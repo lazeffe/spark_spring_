@@ -15,16 +15,12 @@ public class ParkImpl implements Park {
     this.parkDao = parkDao;
   }
 
-  /*@Override
-  public ParkDto getParkDetail(String name) {
-    return parkDao.getDetail(name);
-  }*/
-
   @Override
   public ParkDto getParkDetail(String name) {
     ParkDto parkDto = parkDao.getDetail(name);
 
     String dummy = "";
+
     dummy = parkDto.getTel();
     dummy = dummy.trim();
 
@@ -34,6 +30,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getFulltime_monthly();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setFulltime_monthly("-");
     } else if (dummy.length() > 3) {
@@ -43,6 +40,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getDay_maximum();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setDay_maximum("-");
     } else if (dummy.length() > 3) {
@@ -52,6 +50,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getRates();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setRates("-");
     } else if (dummy.length() > 3) {
@@ -61,6 +60,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getTime_rate();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setTime_rate("-");
     } else if (dummy.length() > 3) {
@@ -70,6 +70,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getAdd_rates();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setAdd_rates("-");
     } else if (dummy.length() > 3) {
@@ -79,6 +80,7 @@ public class ParkImpl implements Park {
 
     dummy = parkDto.getAdd_time_rate();
     dummy = dummy.trim();
+
     if (dummy.equals("NA") || dummy.equals("0")) {
       parkDto.setAdd_time_rate("-");
     } else if (dummy.length() > 3) {

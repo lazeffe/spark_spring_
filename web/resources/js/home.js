@@ -23,22 +23,23 @@ function clickSearchbar(searchbar, hideItems, offset) {
   });
 }
 
-/* chk validation of searching */
-function chkSearching(searchBtn, searchBar, valCmt) {
-  var _searchBtn = document.querySelector(searchBtn);
-  var _searchBar = document.querySelector(searchBar);
-  var _valCmt = document.getElementById(valCmt);
+  /* chk validation of searching */
+  function chkSearching(searchBtn, searchBar, valCmt) {
+    var _searchBtn = document.querySelector(searchBtn);
+    var _searchBar = document.querySelector(searchBar);
+    var _valCmt = document.getElementById(valCmt);
 
-  $(_searchBtn).click(function () {
+    $(_searchBtn).click(function () {
 
-    if ($(_searchBar).val().length === 0) {
-      _valCmt.innerHTML = "검색창에 주차장을 입력해주세요";
-      return false;
-    } else if ($('#tags').val().length < 3) {
-      _valCmt.innerHTML = "세 글자 이상 입력해주세요";
-      return false;
-    } else {
-      return true;
-    }
-  });
-}
+      if ($(_searchBar).val().length === 0) {
+        _valCmt.innerHTML = "검색창에 주차장을 입력해주세요";
+        return false;
+      } else if ($('#tags').val().length < 3) {
+        _valCmt.innerHTML = "세 글자 이상 입력해주세요";
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
+

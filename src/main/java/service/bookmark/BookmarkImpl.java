@@ -26,7 +26,7 @@ public class BookmarkImpl implements Bookmark {
   }
 
   @Override
-  public int getBmkChk(HttpServletRequest request, HttpServletResponse response, String email, String name) throws IOException {
+  public boolean getBmkChk(HttpServletRequest request, HttpServletResponse response, String email, String name) throws IOException {
 
     BookmarkDto result1 = bookmarkDao.bmkListChk(email, name);
 
@@ -39,6 +39,8 @@ public class BookmarkImpl implements Bookmark {
       out.println("location.href='/parkSearch.pa?PARKING_NAME=" + name + "'");
       out.println("</script>");
       out.close();
+
+      return false;
     }
 
     List<BookmarkDto> result2 = bookmarkDao.getBmkList(email);
@@ -51,6 +53,8 @@ public class BookmarkImpl implements Bookmark {
       out.println("location.href='/parkSearch.pa?PARKING_NAME=" + name + "'");
       out.println("</script>");
       out.close();
+
+      return false;
     }
 
     ParkDto parkDto = parkDao.getDetail(name);
@@ -67,7 +71,7 @@ public class BookmarkImpl implements Bookmark {
     out.println("</script>");
     out.close();
 
-    return 0;
+    return true;
   }
 
 }

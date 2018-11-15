@@ -57,7 +57,6 @@
                 <div><input type="password" name="pw" id="pw" placeholder=""></div>
                 <div class="inputCmt" id="pwCmt"></div>
               </div>
-              <%--<input type="submit" name="submit" id="submitBtn" value="로그인">--%>
               <input type="button" value="로그인" id="signInBtn" onclick="chkSignIn()">
             </form>
           </div>

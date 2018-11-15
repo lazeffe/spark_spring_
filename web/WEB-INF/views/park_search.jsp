@@ -77,8 +77,7 @@
   var loginAddr = ' ';
 
   if (login) {
-    var r =
-      loginAddr = '/addBmk.bo';
+    loginAddr = '/addBmk.bo';
   } else {
     loginAddr = '/signIn.me';
   }
@@ -225,12 +224,14 @@
         } else {
           jibun.innerHTML = '전화 번호 : ' + positions[i].tel;
         }
+
         var linkdiv = document.createElement('div');
         var box1 = document.createElement('b');
         var link = document.createElement('a');
         var infoText = document.createTextNode('상세 보기');
         link.classList.add('link');
         link.setAttribute('href', '/parkDetail.pa?PARKING_NAME=' + positions[i].name);
+
         var box2 = document.createElement('b');
         var link2 = document.createElement('a');
         var infoText2 = document.createTextNode('즐겨찾기 추가');
