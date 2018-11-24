@@ -1,8 +1,12 @@
 package controller;
 
+import aop.MessageBean;
 import model.bookmark.BookmarkDao;
 import model.bookmark.BookmarkDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,6 +30,7 @@ public class HomeController {
 
   @RequestMapping("/home.ho")
   protected ModelAndView home(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
     HttpSession session = request.getSession();
     String email = (String) session.getAttribute("email");
     List<BookmarkDto> bmkList = null;

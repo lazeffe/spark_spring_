@@ -2,36 +2,35 @@
   <artifact type="exploded-war" name="spark_spring_:war exploded">
     <output-path>$PROJECT_DIR$/web</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="spark_spring_/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="spark_spring_" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
-          <element id="library" level="project" name="Spring MVC-4.3.18.RELEASE" />
-          <element id="library" level="project" name="Maven: com.oracle:ojdbc6:11.2.0.3" />
-          <element id="library" level="project" name="Maven: commons-collections:commons-collections:20040616" />
-          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:20030825.184428" />
-          <element id="library" level="project" name="Maven: commons-pool:commons-pool:20030825.183949" />
-          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
-          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
-          <element id="library" level="project" name="Maven: log4j:log4j:1.2.15" />
-          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.9" />
-          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.12" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.12" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.12" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.18.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.9" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.5.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.12" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.12" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.12" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.15" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.3.18.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.18.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.18.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:20030825.184428" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:20030825.183949" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:20040616" />
+          <element id="library" level="project" name="Maven: com.oracle:ojdbc6:11.2.0.3" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="spark_spring_/web/Web" />
     </root>
   </artifact>
 </component>

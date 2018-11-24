@@ -21,7 +21,7 @@ public class MemberDaoImpl implements MemberDao {
   public MemberDaoImpl(JdbcTemplate jdbcTemplate) {
     this.jdbcTemplate = jdbcTemplate;
   }
-
+  
   @Override
   public MemberDto memberCheck(String email) {
     String sql = "SELECT * FROM MEMBER WHERE EMAIL = ?";

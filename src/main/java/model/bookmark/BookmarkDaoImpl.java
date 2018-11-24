@@ -35,8 +35,7 @@ public class BookmarkDaoImpl implements BookmarkDao {
     try {
       return jdbcTemplate.query(sql, new RowMapper<BookmarkDto>() {
         @Override
-        public BookmarkDto mapRow(ResultSet rs, int arg1) throws
-                                                     SQLException {
+        public BookmarkDto mapRow(ResultSet rs, int arg1) throws SQLException {
           BookmarkDto dto = new BookmarkDto();
 
           dto.setBOOKMARK_NAME(rs.getString("BOOKMARK_NAME"));
@@ -46,7 +45,7 @@ public class BookmarkDaoImpl implements BookmarkDao {
           return dto;
         }
       }, email);
-
+    
     } catch (EmptyResultDataAccessException e) {
       return null;
     }
